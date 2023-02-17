@@ -1,0 +1,18 @@
+{
+	"states": [{
+			"id": 1,
+			"name": "Alabama",
+			"capital": "Montgomery"
+		},
+		{
+			"id": 2,
+			"name": "Alaska",
+			"capital": "Juneau"
+		},
+		{
+			"id": 3,
+			"name": "Arizona",
+			"capital": "Phoenix"
+		}
+	]
+}

@@ -26,15 +26,13 @@ const useStyles = makeStyles({
 const Form = () =>{
     const classes = useStyles();
     const [data , getWeatherData ] = useState();
-    const [city , setCity] = useState("");
-    const [country , setCountry] = useState("");
     const [click,handleClick] = useState(false);
     
-
     useEffect(()=>{
         
         const getWeather = async() =>{
-            city &&     await getData(city,country).then(response =>{
+            const city = localStorage.getItem("city") || "";
+            city && await getData(city).then(response =>{
                 getWeatherData(response.data)
                 console.log(response.data)
             })
@@ -44,24 +42,13 @@ const Form = () =>{
         handleClick(false);
     },[click]);
 
-    const handleCityChange =(value)=>{
-        setCity(value);
-    }
-    const handleCountryChange =(value)=>{
-        setCountry(value);
-    }
-    
     return(
         <React.Fragment>
             <Box className = {classes.component}>
                 <TextField inputProps = {{className:classes.input}}
-                       onChange = {(e) => handleCityChange(e.target.value)}
+                       disabled
                        className = {classes.input} 
-                       label = "city" />
-                <TextField inputProps = {{className:classes.input}}
-                        onChange = {(e) => handleCountryChange(e.target.value)}
-                       className = {classes.input} 
-                       label = "country" />
+                       label = {`City: ${localStorage.getItem("city") || ""}`} />
                 <Button 
                 onClick = {() => handleClick(true)}
                 className = {classes.button} 

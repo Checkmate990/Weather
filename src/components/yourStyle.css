@@ -1,0 +1,56 @@
+.component {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/bg.jpg);
+    background-size: cover;
+  }
+  
+  .card {
+    display: flex;
+    border-radius: 20px;
+    width: 100%;
+    height: calc(100% - 40px);
+  }
+  
+  .leftContainer {
+    width: 50%;
+    background: #0084ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    color: #fff;
+  }
+  
+  .rightContainer {
+    width: 50%;
+    height: 100%;
+  }
+  
+  @media (max-width: 600px) {
+    .component {
+      flex-direction: column;
+    }
+    .leftContainer {
+      width: 100%;
+      height: 30%;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 20px;
+    }
+    .rightContainer {
+      width: 100%;
+      height: 70%;
+    }
+  }
+  
+  .chatbot {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  
